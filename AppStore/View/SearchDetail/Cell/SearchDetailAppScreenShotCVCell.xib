@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SearchDetailAppScreenShotCVCell" customModule="AppStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="222" height="447"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="222" height="447"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM1-na-tN0">
+                        <rect key="frame" x="0.0" y="0.0" width="222" height="447"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oin-hx-i9o">
+                                <rect key="frame" x="0.0" y="0.0" width="222" height="447"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="447" id="B9H-N6-FIm"/>
+                                    <constraint firstAttribute="width" constant="222" id="Lo8-k7-GQ1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oin-hx-i9o" firstAttribute="leading" secondItem="VM1-na-tN0" secondAttribute="leading" id="6dZ-tr-GCc"/>
+                            <constraint firstAttribute="bottom" secondItem="Oin-hx-i9o" secondAttribute="bottom" id="Fyf-5H-igA"/>
+                            <constraint firstAttribute="trailing" secondItem="Oin-hx-i9o" secondAttribute="trailing" id="IGH-Kj-duh"/>
+                            <constraint firstItem="Oin-hx-i9o" firstAttribute="top" secondItem="VM1-na-tN0" secondAttribute="top" id="V8p-Oi-e2H"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="VM1-na-tN0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="N0N-qg-o9g"/>
+                <constraint firstItem="VM1-na-tN0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SQQ-11-NxF"/>
+                <constraint firstAttribute="trailing" secondItem="VM1-na-tN0" secondAttribute="trailing" id="we3-l5-e0x"/>
+                <constraint firstAttribute="bottom" secondItem="VM1-na-tN0" secondAttribute="bottom" id="xDE-Jx-pBp"/>
+            </constraints>
+            <connections>
+                <outlet property="screenShotImageView" destination="Oin-hx-i9o" id="585-qt-kb3"/>
+            </connections>
+            <point key="canvasLocation" x="27" y="21"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

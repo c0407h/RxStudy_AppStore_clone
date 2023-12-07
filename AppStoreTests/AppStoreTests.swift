@@ -5,7 +5,10 @@
 //  Created by Chung Wussup on 2023/09/16.
 //
 
+// Given When Then
+
 import XCTest
+import Alamofire
 @testable import AppStore
 
 final class AppStoreTests: XCTestCase {
@@ -17,20 +20,69 @@ final class AppStoreTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func test_RCGenerator() {
+        let sut = Generator()
+        let app = TestAppModel()
+        
+        let reviewCount = sut.reviewCount(with: app.userRatingCount)
+//        app.userRatingCount // 11782
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+//        let expected = "1만"
+//        XCTAssertEqual(reviewCount, expected)
+
+        let expected2 = "1.2만"
+        XCTAssertEqual(reviewCount, expected2)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_ByteGenerator() {
+        let sut = Generator()
+        let app = TestAppModel()
+        
+        let fileSize = sut.byteSize(with: app.fileSizeBytes)
+        
+//        let expected = ""
+//        let expected = "329.9"
+        let expected = "329.9MB"
+        XCTAssertEqual(fileSize, expected)
     }
+    
+    func test_LanguageCount() {
+        let sut = Generator()
+        let app = TestAppModel()
+        
+        let languageCnt = sut.languageCnt(with: app.languageCodesISO2A)
 
+//        let expected = "한국어 외 1개"
+//        let expected = "한국어 외"
+        let expected = "한국어"
+
+        XCTAssertEqual(languageCnt, expected)
+    }
+    
+
+    func test_SearchTextMatching() {
+        let sut = Generator()
+        let searchText = "카"
+        let mySearchTexts = ["카카오", "카카오뱅크", "카카오T", "네이버", "다음", "당근마켓", "피피", "피피프렌즈", "서울", "영등포"]
+        
+        let matchingTexts = sut.matchingMySearchText(searchText: searchText, mySearchingTexts: mySearchTexts)
+        
+//        let expected: [String] = []
+        let expected: [String] = ["카카오", "카카오뱅크", "카카오T"]
+        
+        XCTAssertEqual(matchingTexts, expected)
+    }
+    
+    func test_ApiCall() {
+        let sut = Generator()
+        let seachText = "카카오뱅크"
+
+//        var expected: Bool = false
+        var expected: Bool = true
+        let fetchApps = sut.fetchApps(searchText: seachText) { _, _ in }
+        
+        XCTAssertEqual(fetchApps, expected)
+        
+    }
 }
